@@ -1,0 +1,11 @@
++---------+-----------------+------+-----+---------+----------------+
+| Field   | Type            | Null | Key | Default | Extra          |
++---------+-----------------+------+-----+---------+----------------+
+| id_mno  | bigint unsigned | NO   | PRI | NULL    | auto_increment |
+| country | varchar(64)     | NO   |     | NULL    |                |
+| network | varchar(200)    | NO   |     | NULL    |                |
+| MCC     | varchar(3)      | NO   |     | NULL    |                |
+| MNC     | varchar(3)      | NO   |     | NULL    |                |
+| min_len | tinyint         | YES  |     | NULL    |                |
+| max_len | tinyint         | YES  |     | NULL    |                |
++---------+-----------------+------+-----+---------+----------------+
