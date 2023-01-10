@@ -4,6 +4,7 @@ const netNew = "Network (actual)"
 const mcc = "MCC"
 const mnc = "MNC "
 const country = "Country"
+const flag = "Change"
 const fileInput = document.getElementById('jsonFile').files[0];
 var json = ''
 
@@ -15,9 +16,9 @@ document.getElementById("startButton").addEventListener('click', e => generateSt
 
 function generateStr (json){
     json.forEach(el => {
-        if (el[netStud] == ""){
+        if (el[flag] == "new"){
             finalList.push(`insert into mno_networks (country,network,MCC,MNC) values ("${el[country]}","${el[netNew]}","${el[mcc]}","${el[mnc]}")`)
-        } else if ((el[netStud] != "") && (el[netNew] != el[netStud])){
+        } else if (el[flag] == "yes"){
             finalList.push(`update mno_networks set network="${el[netNew]}" where MCC="${el[mcc]}" and MNC="${el[mnc]}"`)
         } else {
             console.log('nope')
