@@ -2,7 +2,7 @@ const docBody = document.getElementById('outputBody')
 const netStud = "Network (Studio)"
 const netNew = "Network (actual)"
 const mcc = "MCC"
-const mnc = "MNC "
+const mnc = "MNC"
 const country = "Country"
 const flag = "Change"
 const fileInput = document.getElementById('jsonFile').files[0];
@@ -13,7 +13,6 @@ let finalList = []
 document.getElementById("startButton").addEventListener('click', e => generateStr(json))
 
 
-
 function generateStr (json){
     json.forEach(el => {
         if (el[flag] == "new"){
@@ -21,7 +20,7 @@ function generateStr (json){
         } else if (el[flag] == "yes"){
             finalList.push(`update mno_networks set network="${el[netNew]}" where MCC="${el[mcc]}" and MNC="${el[mnc]}"`)
         } else {
-            console.log('nope')
+            console.log(el[flag])
         }
     });
     printList(finalList);
