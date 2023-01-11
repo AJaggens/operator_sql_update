@@ -16,9 +16,9 @@ document.getElementById("startButton").addEventListener('click', e => generateSt
 function generateStr (json){
     json.forEach(el => {
         if (el[flag] == "new"){
-            finalList.push(`insert into mno_networks (country,network,MCC,MNC) values ("${el[country]}","${el[netNew]}","${el[mcc]}","${el[mnc]}")`)
+            finalList.push(`insert into mno_networks (country,network,MCC,MNC) values ("${el[country]}","${el[netNew]}","${el[mcc]}","${el[mnc]}");`)
         } else if (el[flag] == "yes"){
-            finalList.push(`update mno_networks set network="${el[netNew]}" where MCC="${el[mcc]}" and MNC="${el[mnc]}"`)
+            finalList.push(`update mno_networks set network="${el[netNew]}" where MCC="${el[mcc]}" and MNC="${el[mnc]}";`)
         } else {
             console.log(el[flag])
         }
